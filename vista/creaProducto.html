@@ -39,7 +39,7 @@
   <body>
     <div class = "container">
       <div class="wrapper">
-        <form id="createProductForm" action="../controller/crearProducto.php" method="post" name="Login_Form" class="form-signin">
+        <form id="createProductForm" action="../controller/crearProducto.php" method="get" name="Login_Form" class="form-signin">
           <h3 class="form-signin-heading">Bienvenido Creacion de Producto</h3>
           <hr class="colorgraph"><br>
 
@@ -65,7 +65,7 @@
             'valor': $( "input[name='valor']" ).val()
           }
           
-          $.post( "../controller/crearProducto.php", body, function(a, b, c){
+          $.get( "../controller/crearProducto.php", body, function(a, b, c){
             
             swal(
               'Good job!',

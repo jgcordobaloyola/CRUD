@@ -2,11 +2,11 @@
 include_once '../model/Productos.php';
 
   $method = $_SERVER['REQUEST_METHOD'];
-  if($method=="POST"){
+  if($method=="GET"){
     $producto = new Productos();
-    $producto->setNombre($_POST["nombre"]);
-    $producto->setCodigo($_POST["codigo"]);
-    $producto->setValor($_POST["valor"]);
+    $producto->setNombre($_GET["nombre"]);
+    $producto->setCodigo($_GET["codigo"]);
+    $producto->setValor($_GET["valor"]);
     //guardamos
     $resp = $producto->save();
     if($resp[0]){
