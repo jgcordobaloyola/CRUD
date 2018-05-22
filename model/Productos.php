@@ -59,19 +59,21 @@ class Productos {
         }
     }
     
-    public function deleteByID($id){
+    public function updateByID($id,$nNombre,$nCodigo,$nValor){
         $db= new Database();
         $conn = $db->connect();
         if ($conn) {
-            $query="DELETE producto WHERE id=$id";
+            $query="UPDATE producto SET nombre='".$nNombre."',"
+                    ."SET codigo='".$nValor."',"
+                    ."SET valor = '".$nValor."'"
+                    . "WHERE id=$id";
             echo $query;
             if ($conn->query($query)===true) {
                 return array(TRUE, $this->toJSON());
             }else{
                 return array(FALSE, $conn->error);
             }
-        }
-        
+        }    
     }
             
     
