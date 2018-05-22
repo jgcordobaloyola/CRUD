@@ -4,9 +4,9 @@
 
   $method = $_SERVER['REQUEST_METHOD'];
   if($method=="POST"){
-    $user = new User();
-    $user->setUsername($_POST["id"]);
-    $resp = $user->save();
+    $producto = new Productos();
+    $producto->setId($_POST["id"]);
+    $resp = $producto->deleteByID($id);
     if($resp[0]){
       http_response_code(200);
     }else{

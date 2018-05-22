@@ -38,7 +38,7 @@
   <body>
     <div class = "container">
       <div class="wrapper">
-        <form id="createUserForm" action="controller/eliminarProducto.php" method="post" name="Login_Form" class="form-signin">
+        <form id="deleteUserForm" action="../controller/eliminarProducto.php" method="post" name="Login_Form" class="form-signin">
           <h3 class="form-signin-heading">Modulo Eliminar Producto</h3>
           <hr class="colorgraph"><br>
 
@@ -53,7 +53,7 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
-        $("#createUserForm").submit(function(event){
+        $("#deleteUserForm").submit(function(event){
           var body = {
             'ID': $( "input[name='id']" ).val()
           }

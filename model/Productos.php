@@ -11,6 +11,10 @@ class Productos {
     public $codigo = "";
     public $valor = "";
 
+    function getId() {
+        return $this->id;
+    }
+    
     function getNombre() {
         return $this->nombre;
     }
@@ -22,7 +26,11 @@ class Productos {
     function getValor() {
         return $this->valor;
     }
-
+    
+    function setId($id) {
+        $this->id = $id;
+    }
+    
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
