@@ -48,7 +48,8 @@ class Productos {
         $conn = $db->connect();
 
         if ($conn) {
-            $query = "INSERT INTO producto (nombre,codigo,valor) VALUES ('".$this->nombre."','".$this->codigo."',".$this->valor.")";
+            $query = "INSERT INTO producto (nombre,codigo,valor) VALUES ('".$this->$nombre."','".$this->$codigo."',".$this->$valor.")";
+            print $query;
             echo $query;
 
             if ($conn->query($query) === TRUE) {
@@ -58,6 +59,21 @@ class Productos {
             }
         }
     }
+    
+    public function deleteById($nId){
+        $db= new Database();
+        $conn = $db->connect();
+        if ($conn) {
+            $query = "Delete producto where id=$this->$nId";
+            echo $query;
+            if ($conn->query($query)===true) {
+                return array(TRUE, $this->toJSON());
+            }else{
+                return array(FALSE, $conn->error);
+                }
+            }
+        }
+    
     
     public function updateByID($id,$nNombre,$nCodigo,$nValor){
         $db= new Database();
