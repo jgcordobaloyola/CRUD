@@ -48,7 +48,7 @@ class Productos {
         $conn = $db->connect();
 
         if ($conn) {
-            $query = "INSERT INTO producto (nombre,codigo,valor) VALUES ('".$this->$nombre."','".$this->$codigo."',".$this->$valor.")";
+            $query = "INSERT INTO producto (nombre,codigo,valor) VALUES ('".$this->nombre."','".$this->codigo."',".$this->valor.")";
             print $query;
             echo $query;
 
